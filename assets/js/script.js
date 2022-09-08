@@ -10,3 +10,12 @@ var feedbackEl = document.querySelector("#feedback");
 
 var questionsEl = document.querySelector("#question");
 var choicesEl = document.querySelector("#choices");
+
+function startQuiz() {
+    titleScreen.setAttribute("class", "hide");
+    quizScreen.setAttribute("class", "show");
+    timerId = setInterval(tick, 1000);
+    timeEl.textContent = time;
+  
+    getQuestion();
+  }
