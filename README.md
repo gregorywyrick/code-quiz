@@ -14,6 +14,11 @@ There is no istallation required to use this application, as it is a web based a
 
 To use this application, simply click on the URL (), and the user will be taken to the main page (see Screenshot 1 below). Once there, the user will click on the "Start Quiz" button to initiate the quiz. Once the quiz has been initiated, the first question will appear and the timer will immediately begin to count down from 100 (as seen in Screenshot 2 below). The user will answer each question as they appear, and for every question answered incorrectly the user will lose 20 "points" or seconds off of their time. After answering each question the user will be presented with their final score (see Screenshot 3 below). The final score will be the amount of time remaining, less 20 for each question answered incorrectly. If the user answers every question correctly, their final score will simply be 100 minus however many seconds it took them to complete the quiz. The user can then enter their initals to be added to the highscores. If the user wishes to take the quiz again, simply refresh the page.
 
+![Screen Shot 2022-09-08 at 6 25 28 PM](https://user-images.githubusercontent.com/110744014/189245889-96c54984-767c-42b8-89a5-e308f53d06aa.png)
+
+![Screen Shot 2022-09-08 at 6 25 47 PM](https://user-images.githubusercontent.com/110744014/189245946-12068916-93d8-4f9a-94bd-e50d625fa149.png)
+
+![Screen Shot 2022-09-08 at 6 26 08 PM](https://user-images.githubusercontent.com/110744014/189245983-efbb5773-8675-42c4-8645-b9a38f5d3d01.png)
 
 ## Credits
 
