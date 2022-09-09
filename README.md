@@ -8,6 +8,8 @@ I am pleased to bring you the completed version of my application. This applicat
 
 There is no istallation required to use this application, as it is a web based application. All one needs is access to the internet.
 
+https://gregorywyrick.github.io/code-quiz/
+
 (Tip: make sure that your browser is up to date with its newest version, as this may cause loading issues)
 
 ## Usage
