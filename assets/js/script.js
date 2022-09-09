@@ -1,3 +1,9 @@
+
+var currentQuestionIndex = 0;
+var time = questions.length * 20;
+var timerId;
+
+
 var timeEl = document.querySelector("#time");
 var startBtn = document.querySelector("#startButton");
 var submitBtn = document.querySelector("#submit-button");
@@ -19,3 +25,76 @@ function startQuiz() {
   
     getQuestion();
   }
+  
+function tick() {
+    time--;
+    timeEl.textContent = time;
+
+    if (time <= 0) {
+      quizEnd();
+    }
+  }
+
+  function getQuestion() {
+    var currentQuestion = questions[currentQuestionIndex];
+    var titleEl = document.getElementById("question-title");
+    titleEl.textContent = currentQuestion.title;
+  
+    choicesEl.innerHTML = "";
+
+    currentQuestion.choices.forEach(function(choice, i) {
+      var choiceNode = document.createElement("button");
+      choiceNode.setAttribute("class", "choice");
+      choiceNode.setAttribute("value", choice);
+  
+      choiceNode.textContent = i + 1 + ". " + choice;
+  
+      choiceNode.onclick = questionClick;
+  
+      choicesEl.appendChild(choiceNode);
+    });
+  }
+  function questionClick() {
+    if (this.value !== questions[currentQuestionIndex].answer) {
+
+      time -= 20;
+  
+      if (time < 0) {
+        time = 0;
+      }
+  
+      timeEl.textContent = time;
+  
+  
+      feedbackEl.textContent = "Wrong!";
+    } else {
+
+      feedbackEl.textContent = "Correct!";
+    }
+  
+    feedbackEl.setAttribute("class", "feedback");
+    setTimeout(function() {
+      feedbackEl.setAttribute("class", "feedback hide");
+    }, 1000);
+  
+    currentQuestionIndex++;
+  
+    if (currentQuestionIndex === questions.length) {
+      quizEnd();
+    } else {
+      getQuestion();
+    }
+  }
+function quizEnd() {
+  clearInterval(timerId);
+
+  var highscoreSectionEl = document.querySelector("#highscore-section");
+  highscoreSectionEl.setAttribute("class", "show");
+
+  var finalScoreEl = document.querySelector("#final-score");
+  finalScoreEl.textContent = time;
+
+  quizScreen.setAttribute("class", "hide");
+}
+
+startBtn.onclick = startQuiz;
